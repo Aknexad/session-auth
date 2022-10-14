@@ -1,17 +1,17 @@
 const express = require('express');
 
-const app = express();
+const index = require('./routers/index');
 
-// set view engin
-app.set('view engine', 'pug');
+const app = express();
 
 // meddeware
 app.use(express.json());
 
+// set view engin
+app.set('view engine', 'pug');
+
 // routes
-app.get('/', (req, res) => {
-  res.render('index.pug', { title: 'Novinverse projact', username: '' });
-});
+app.use('/', index);
 
 // server
 const port = process.env.PORT || 8080;
