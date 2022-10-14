@@ -1,0 +1,12 @@
+html(lang='en')
+  head
+    title=title
+  body
+    form(action='/singup', method='get')
+      label(for='username') username
+      input#username(type='text', name='username', placeholder='username')
+      label(for='password') password
+      input#password(type='password', name='password')
+      label(for='config-password') password
+      input#config-password(type='password', name='config-password')
+      input(type="submit")
