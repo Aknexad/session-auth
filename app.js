@@ -5,7 +5,7 @@ const _ = require('dotenv').config({ path: './config/.env' });
 const index = require('./routers/index');
 const sinup = require('./routers/sinup');
 const login = require('./routers/login');
-const { query } = require('express');
+const logout = require('./routers/logout');
 
 const app = express();
 
@@ -27,23 +27,10 @@ app.use(
 // set view engin
 app.set('view engine', 'pug');
 
-// routes
-// app.get('/', (req, res) => {
-//   if (req.session.page_views) {
-//     req.session.page_views++;
-//     res.send(`page views ${req.session.page_views}`);
-//   } else {
-//     req.session.page_views = 1;
-//     res.send('Welcome to this page for the first time!');
-//   }
-// });
-// app.get('/logout', (req, res) => {
-//   req.session.destroy();
-//   res.redirect('/');
-// });
 app.use('/', index);
 app.use('/singup', sinup);
 app.use('/login', login);
+app.use('/logout', logout);
 
 // server
 const port = process.env.PORT || 8080;
