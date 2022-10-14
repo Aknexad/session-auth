@@ -1,3 +1,5 @@
+const data = require('../Model/db');
+
 module.exports = {
   renderSinupPage: (req, res) => {
     const tt = req.query.username;
