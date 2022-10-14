@@ -1,4 +1,6 @@
 const express = require('express');
+const session = require('express-session');
+const _ = require('dotenv').config({ path: './config/.env' });
 
 const index = require('./routers/index');
 const sinup = require('./routers/sinup');
@@ -8,6 +10,16 @@ const app = express();
 
 // meddeware
 app.use(express.json());
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 100 * 60 * 10,
+    },
+  })
+);
 
 // set view engin
 app.set('view engine', 'pug');
