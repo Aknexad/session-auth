@@ -19,7 +19,7 @@ module.exports = {
         req.session.userId = user.id;
         res.redirect('/');
       } else {
-        res.redirect('/login');
+        res.redirect('/singup');
       }
     }
   },
