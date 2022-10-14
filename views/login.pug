@@ -2,9 +2,13 @@ html
   head
     title=title
   body
+  h1="Login Page"
     form(action='/login', method='get')
       label(for='username') username
       input#username(type='text', name='username', placeholder='username')
       label(for='password') password
       input#password(type='password', name='password')
       input(type="submit")
+  a(href="/singup")='singup' 
+  br 
+  a(href="/")='home'     
