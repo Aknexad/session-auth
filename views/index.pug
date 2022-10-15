@@ -4,4 +4,12 @@ html
     body 
         h1= `Welcome ${username}`   
         br
-        a(href='/logout')='LOGOUT'
+        if(!log) 
+            a(href='/singup')='SINGUP'
+            br
+            br
+            a(href='/login')='LOGIN'
+        br
+        br
+        if (log)
+            a(href='/logout')='LOGOUT'
