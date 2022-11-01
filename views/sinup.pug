@@ -1,14 +1,15 @@
 html(lang='en')
   head
     title=title
+    link(rel="stylesheet", href="/css/style.css")
   body
   h1='Singup Page'
     form(action='/singup', method='post')
       label(for='username') username
       input#username(type='text', name='username', placeholder='username')
       label(for='password') password
-      input#password(type='password', name='password')
-      input(type="submit")
-  a(href="/login")='login' 
-  br 
-  a(href="/")='home'           
+      input#password(type='password', name='password' placeholder='Password')
+      input.btn(type="submit")
+  div 
+    a(href="/login")='login' 
+    a(href="/")='home'           

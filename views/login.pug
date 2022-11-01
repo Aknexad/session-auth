@@ -1,6 +1,7 @@
 html
   head
     title=title
+    link(rel="stylesheet", href="/css/style.css")
   body
   h1="Login Page"
     form(action='/login', method='post')
@@ -8,7 +9,7 @@ html
       input#username(type='text', name='username', placeholder='username')
       label(for='password') password
       input#password(type='password', name='password')
-      input(type="submit")
-  a(href="/singup")='singup' 
-  br 
-  a(href="/")='home'     
+      input.btn(type="submit")
+  div 
+    a(href="/singup")='singup'  
+    a(href="/")='home'     
